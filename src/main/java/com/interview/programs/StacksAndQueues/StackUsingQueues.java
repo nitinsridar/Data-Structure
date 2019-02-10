@@ -6,30 +6,25 @@ import java.util.Queue;
 public class StackUsingQueues {
 
 
-    static class Stack
-    {
+
         // Two inbuilt queues
-        static Queue<Integer> q1 = new LinkedList<Integer>();
-        static Queue<Integer> q2 = new LinkedList<Integer>();
+         Queue<Integer> q1 = new LinkedList<Integer>();
+         Queue<Integer> q2 = new LinkedList<Integer>();
 
-        // To maintain current number of
-        // elements
-        static int curr_size;
+        // To maintain current number of elements
+         int curr_size;
 
-        Stack()
+        StackUsingQueues()
         {
             curr_size = 0;
         }
 
-        static void push(int x)
+        public void push(int x)
         {
             curr_size++;
-
             // Push x first in empty q2
             q2.add(x);
-
-            // Push all the remaining
-            // elements in q1 to q2.
+            // Push all the remaining elements in q1 to q2.
             while (!q1.isEmpty())
             {
                 q2.add(q1.peek());
@@ -42,7 +37,7 @@ public class StackUsingQueues {
             q2 = q;
         }
 
-        static void pop(){
+        public void pop(){
 
             // if no elements are there in q1
             if (q1.isEmpty())
@@ -51,27 +46,28 @@ public class StackUsingQueues {
             curr_size--;
         }
 
-        static int top()
+        public int top()
         {
             if (q1.isEmpty())
                 return -1;
             return q1.peek();
         }
 
-        static int size()
+        public int size()
         {
             return curr_size;
         }
-    };
+
 
     // driver code
     public static void main(String[] args)
     {
-        Stack s = new Stack();
+        StackUsingQueues s = new StackUsingQueues();
         s.push(1);
         s.push(2);
         s.push(3);
 
+        System.out.println("Stack Using Queues");
         System.out.println("current size: " + s.size());
         System.out.println(s.top());
         s.pop();
@@ -82,5 +78,3 @@ public class StackUsingQueues {
         System.out.println("current size: " + s.size());
     }
 }
-// This code is contributed by Prerna
-

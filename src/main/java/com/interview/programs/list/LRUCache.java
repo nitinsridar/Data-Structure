@@ -1,4 +1,4 @@
-package com.interview.programs.list;
+package com.interview.DataStructures.list;
 
 import java.util.HashMap;
 import java.util.Map;
