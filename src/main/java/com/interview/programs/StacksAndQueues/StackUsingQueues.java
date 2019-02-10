@@ -74,7 +74,6 @@ public class StackUsingQueues {
         System.out.println(s.top());
         s.pop();
         System.out.println(s.top());
-
         System.out.println("current size: " + s.size());
     }
 }
