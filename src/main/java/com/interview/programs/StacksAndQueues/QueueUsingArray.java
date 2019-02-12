@@ -4,7 +4,7 @@ import java.util.NoSuchElementException;
 
 public class QueueUsingArray<T> {
     private T[] data;
-    private int front, size, back;
+    private int front, size, rear;
 
     public final static int DEFAULT_INITIAL_ARRAY_SIZE = 16;
     /**
@@ -38,18 +38,9 @@ public class QueueUsingArray<T> {
             throw new IllegalArgumentException("Ran out of memory to queue");
         }
 
-        data[back] = e;
-        back = (back + 1) % data.length;
+        data[rear] = e;
+        rear = (rear + 1) % data.length;
         size++;
-//        return this;
-    }
-
-    public T element() throws NoSuchElementException {
-        if (size == 0) {
-            throw new NoSuchElementException("Queue does not contain any items.");
-        }
-
-        return data[front];
     }
 
     public T remove() throws NoSuchElementException {
@@ -64,30 +55,9 @@ public class QueueUsingArray<T> {
         return output;
     }
 
-    public boolean offer(T e) {
-        if (size == data.length) {
-            return false;
-        }
-
-        size++;
-        data[back] = e;
-        back = (back + 1) % data.length;
-        return true;
-    }
-
-    public T peek() {
+    public T peek()
+    {
         return size == 0 ? null : data[front];
-    }
-
-    public T poll() {
-        if (size == 0) {
-            return null;
-        }
-
-        T output= data[front];
-        data[front] = null;
-        front = (front + 1) % data.length;
-        return output;
     }
 
 
@@ -110,8 +80,6 @@ public class QueueUsingArray<T> {
 
         System.out.println("Peek: "+queue.peek());
         System.out.println("Peek: "+queue.peek());
-        System.out.println("Element: "+queue.element());
-        System.out.println("Offer: "+queue.offer(77));
         System.out.println("Remove: "+queue.remove());
         System.out.println("Peek: "+queue.peek());
         System.out.println("Remove: "+queue.remove());

@@ -7,7 +7,7 @@ import java.util.PriorityQueue;
 public class StackUsingArray<E> {
 
     private int size = 0;
-    private Object[] elements;
+    private E[] elements;
     public static final int MAX_ARRAY_SIZE = Integer.MAX_VALUE - 8;
     public static final int INITIAL_ARRAY_SIZE = 16;
 
@@ -16,7 +16,7 @@ public class StackUsingArray<E> {
         if(capacity < INITIAL_ARRAY_SIZE) throw new IllegalArgumentException("Stack Capacity must be greater than 1");
         if (capacity > MAX_ARRAY_SIZE) throw new IllegalArgumentException("Stack capacity is greater then MAX Array Size");
 
-        elements = new Object[capacity];
+        elements = (E[]) new Object[capacity];
     }
 
     public void push(E e){
@@ -71,9 +71,6 @@ public class StackUsingArray<E> {
         System.out.println( stack.pop() );
         System.out.println( stack.pop() );
         System.out.println( stack.pop() );
-
         System.out.println( stack );
-
-        PriorityQueue que = new PriorityQueue();
     }
 }
