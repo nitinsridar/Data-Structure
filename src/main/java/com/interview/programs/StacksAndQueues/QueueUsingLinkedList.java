@@ -16,6 +16,9 @@ public class QueueUsingLinkedList<T> {
     private Node<T> rear;
 
     //Add a data to the end of the List.
+    //Create a new node with the value to be inserted.
+    //If the queue is empty, then set both front and rear to point to newNode.
+    //If the queue is not empty, then set next to the rear of the new node and the rear to point to the new node.
     public T add(T data){
 
         Node<T> newNode = new Node<>(data);
