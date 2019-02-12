@@ -12,23 +12,23 @@ public class QueueUsingLinkedList<T> {
         }
     }
 
-    private Node<T> first;
-    private Node<T> last;
+    private Node<T> front;
+    private Node<T> rear;
 
     //Add a data to the end of the List.
     public T add(T data){
 
         Node<T> newNode = new Node<>(data);
 
-        if (last!=null){
-            last.next = newNode;
+        if (rear!=null){
+            rear.next = newNode;
         }
-        last=newNode;
-        if (first == null){
-            first=last;
+        rear=newNode;
+        if (front == null){
+            front=rear;
         }
 
-        return (last.data);
+        return (rear.data);
     }
 
 //    //Add item to the end of the list.
@@ -50,15 +50,16 @@ public class QueueUsingLinkedList<T> {
 //    }
     public T remove(){
 
-        T data = first.data;
-        first = first.next;
-        if (first==null){
-            last=null;
+        T data = front.data;
+        front = front.next;
+        if (front==null){
+            rear=null;
         }
         return data;
     }
 
     public static void main(String[] args) {
+
         QueueUsingLinkedList<Integer> queue = new QueueUsingLinkedList<>();
 
         System.out.println(queue.add(10));
@@ -80,9 +81,5 @@ public class QueueUsingLinkedList<T> {
         System.out.println(queue.remove());
         System.out.println(queue.remove());
         System.out.println(queue.remove());
-
-
-
-
     }
 }
