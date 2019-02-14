@@ -57,6 +57,7 @@ public class MidOfLinkedList {
             mid.push(i);
         }
 
+
         mid.printList();
         mid.printMiddle();
 
