@@ -1,15 +1,10 @@
 package com.interview.programs.list;
 
-
-public class FindMid {
-
-    Node head;
+public class MidOfLinkedList {
 
     private static class Node{
-
         int data;
         Node next;
-        Node Prev;
 
         public Node(int data){
             this.data = data;
@@ -18,6 +13,10 @@ public class FindMid {
     }
 
 
+    Node head;
+
+
+    //Using Slow Pointer and Fast Pointer
     public void printMiddle() {
 
         Node slow_ptr = head;
@@ -44,20 +43,22 @@ public class FindMid {
 
         Node lnode = head;
         while(lnode.next != null){
-            System.out.println(lnode.data+ "->");
+            System.out.print(lnode.data+ "--->");
             lnode = lnode.next;
         }
+        System.out.println("end");
     }
 
     public static void main(String[] args) {
 
-        FindMid fm = new FindMid();
+        MidOfLinkedList mid = new MidOfLinkedList();
 
-        for(int i = 6; i>0; --i){
-
-            fm.push(i);
-            fm.printMiddle();
-            fm.printList();
+        for(int i = 11; i>=1; --i){
+            mid.push(i);
         }
+
+        mid.printList();
+        mid.printMiddle();
+
     }
 }
