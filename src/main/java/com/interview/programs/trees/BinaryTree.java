@@ -11,8 +11,7 @@ package com.interview.programs.trees;
 
 //This is a Binary Tree ONLY
 
-public class BinaryTree
-{
+public class BinaryTree {
 
 /* Class containing left and right child of current
 node and key value*/
