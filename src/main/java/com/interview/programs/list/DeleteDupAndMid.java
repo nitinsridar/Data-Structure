@@ -53,6 +53,7 @@ public class DeleteDupAndMid {
         System.out.println();
     }
 
+    //Removing duplicates takes O(N) TIME
     public void deleteDups() {
         if (head == null) {
         }
