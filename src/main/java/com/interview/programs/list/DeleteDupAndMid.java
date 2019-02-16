@@ -18,7 +18,7 @@ public class DeleteDupAndMid {
 
     Node head;
 
-
+    //Runner Technique
     //Using Slow Pointer and Fast Pointer
     public void printMiddle() {
 
@@ -72,6 +72,7 @@ public class DeleteDupAndMid {
             } else {
                 set.add(current.data);
                 previous = current;
+                System.out.println(previous.data);
             }
             current = current.next;
         }
