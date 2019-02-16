@@ -1,4 +1,4 @@
-package com.interview.programs.trees;
+package com.interview.programs.Trees;
 
 //    More tree terminology:
 //
