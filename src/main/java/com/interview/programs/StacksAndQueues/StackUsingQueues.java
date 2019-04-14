@@ -19,8 +19,7 @@ public class StackUsingQueues {
             curr_size = 0;
         }
 
-        public void push(int x)
-        {
+        public void push(int x) {
             curr_size++;
             // Push x first in empty q2
             q2.add(x);
