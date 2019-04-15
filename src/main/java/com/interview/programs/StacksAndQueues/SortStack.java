@@ -11,23 +11,19 @@ push temp in temporary stack
 The sorted numbers are in tmpStac   k
 */
 
-public class SortStack
-{
+public class SortStack {
     // This function return the sorted stack
-    public static Stack<Integer> sortstack(Stack<Integer>
-                                                   input)
-    {
+    public static Stack<Integer> sortstack(Stack<Integer> input) {
+
+        // This is the temporary stack
         Stack<Integer> tmpStack = new Stack<Integer>();
-        while(!input.isEmpty())
-        {
+        while(!input.isEmpty()) {
             // pop out the first element
             int tmp = input.pop();
 
             // while temporary stack is not empty and
             // top of stack is greater than temp
-            while(!tmpStack.isEmpty() && tmpStack.peek()
-                    > tmp)
-            {
+            while(!tmpStack.isEmpty() && tmpStack.peek() > tmp) {
                 // pop from temporary stack and
                 // push it to the input stack
                 input.push(tmpStack.pop());
@@ -39,9 +35,7 @@ public class SortStack
         return tmpStack;
     }
 
-    // Driver Code
-    public static void main(String args[])
-    {
+    public static void main(String args[]) {
         Stack<Integer> input = new Stack<Integer>();
         input.add(34);
         input.add(3);
@@ -50,7 +44,6 @@ public class SortStack
         input.add(92);
         input.add(23);
 
-        // This is the temporary stack
         Stack<Integer> tmpStack=sortstack(input);
         System.out.println("Sorted numbers are:");
 
