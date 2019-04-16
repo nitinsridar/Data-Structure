@@ -19,7 +19,6 @@ public class ReverseLinkedList {
 
         if(head == null){
             Node new_node = new Node(data);
-            return;
         }
 
         Node current = head;
